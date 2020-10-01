@@ -131,34 +131,6 @@ public class Simulation extends Thread {
 	}
 	// Control End
 
-	
-	/*
-	int x = 50;
-	int y = 60;
-	int c = 0;
-	while(c < 20) {
-		position[0][x][y] = 100;
-		position[0][x][y + 1] = 100;
-		x += 1;
-		y += 2;
-		c++;
-	}
-	*/
-	
-	/*
-	for (int x = 0; x < matrix_size; x++) {
-		for (int y = 0; y < matrix_size; y++) {
-			position[0][x][y] = 100;
-		}
-	}
-	*/
-	
-	/*
-	for (int y = 175; y < 225; y++)
-		for (int x = 180; x < 220; x++)
-			position[0][x][y] = 100;
-		*/
-
 	/*
 	 * Makes the iterations happen
 	 */
@@ -275,70 +247,9 @@ public class Simulation extends Thread {
 			for (int x = 75; x < 121; x++)
 				position[t][x][y] = p;
 	}
-	
-	/*
-	//Set the cells wanted to p or -p
-	for (int x = 42; x < 96; x++)
-		for (int y = 21; y < 123; y++) {
-			position[t][x][y] = p;
-		}
-	*/
-	/*
-	for (int y = 300; y < 367; y++)
-		for (int x = 33; x < 34; x++)
-			position[t][x][y] = p;
-			*/
-	
-	
-	/*
-	///Lautsprecher
-	/*
-	//Has to be set manually
-	for (int x = 118; x < 188; x++)
-		for (int y = 240; y < 241; y++) {
-			position[t][x][y] = p;
-
-		}
-
-	//Has to be set manually
-	for (int x = 118; x < 188; x++)
-		for (int y = 241; y < 242; y++) {
-			position[t][x][y] = -p;
-		}
-		*/
-	
-	//Pulsleitung
-	/*
-		for (int x = 170; x < 230; x++) {
-			if(t < 100) {
-				position[t][x][199] = p;
-				position[t][x][200] = p;
-			}
-		}
-		*/
-	
-	/*
-	for (int y = 300; y < 367; y++)
-		for (int x = 33; x < 34; x++)
-			position[t][x][y] = p;
-	*/
-	
-	/*
-	for (int y = 0; y < matrix_size; y++)
-		position[t][0][y] = p;
-	
-	for (int x = 96; x < 97; x++)
-		for (int y = 141; y < 150; y++)
-			position[t][x][y] = p;
-
-	for (int x = 96; x < 97; x++)
-		for (int y = 250; y < 259; y++)
-			position[t][x][y] = -p;
-	*/
-	//DS_0_400x400
 
 	/*
-	 * @param The path to your NxN *.jpg or *.png to convert to a solid mask
+	 * @param The path to your n*n *.jpg or *.png to convert to a solid mask
 	 */
 	public void setSolid(String path) throws IOException {
 		final File file = new File(path);
