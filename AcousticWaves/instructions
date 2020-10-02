@@ -1,7 +1,8 @@
 Using the Runnable JAR File to launch the program:
 	Make sure to have a 
 		OpenJDK Platform Binary 
-			like from 	https://www.oracle.com/java/technologies/javase-jdk14-downloads.html
-				or		https://www.oracle.com/java/technologies/javase-jdk15-downloads.html
+			available at	https://www.oracle.com/java/technologies/javase-jdk14-downloads.html
+				,			https://www.oracle.com/java/technologies/javase-jdk15-downloads.html
+				...
 	installed 
 		which can be used to open the respective runnable *.jar.
