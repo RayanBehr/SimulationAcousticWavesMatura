@@ -197,6 +197,8 @@ public class Simulation extends Thread {
 
 		else {
 			double acceleration = 0;
+			
+			double c = 0;
 
 			double pM = position[t][x][y];
 			double pL = 0;
@@ -205,22 +207,30 @@ public class Simulation extends Thread {
 			double pT = 0;
 
 			// Left
-			if (boundaryCheck(x - 1, y))
+			if (boundaryCheck(x - 1, y)) {
 				pL = position[t][x - 1][y];
+				c++;
+			}
 
 			// Right
-			if (boundaryCheck(x + 1, y))
+			if (boundaryCheck(x + 1, y)) {
 				pR = position[t][x + 1][y];
+				c++;
+			}
 
 			// Below
-			if (boundaryCheck(x, y + 1))
+			if (boundaryCheck(x, y + 1)) {
 				pB = position[t][x][y + 1];
+				c++;
+			}
 
 			// Top
-			if (boundaryCheck(x, y - 1))
+			if (boundaryCheck(x, y - 1)) {
 				pT = position[t][x][y - 1];
+				c++;
+			}
 
-			acceleration = (4 * pM - pL - pR - pB - pT) / 4d;
+			acceleration = (c * pM - pL - pR - pB - pT) / c;
 			
 			velocity[t + 1][x][y] = velocity[t][x][y] + acceleration;
 		}
