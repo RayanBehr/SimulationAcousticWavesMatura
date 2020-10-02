@@ -183,7 +183,7 @@ public class Simulation extends Thread {
 		}
 	}
 
-	private void iteratePosition(int t, int x, int y) {
+	private void iteratePosition(int t, int x, int y) {	
 
 		position[t + 1][x][y] = position[t][x][y] - 0.5 * velocity[t + 1][x][y] * damping;
 
@@ -247,8 +247,11 @@ public class Simulation extends Thread {
 			//for (int x = 75; x < 121; x++)
 				//position[t][x][y] = p;
 		
-		for (int y = 0; y < 400; y++)
-			position[t][0][y] = p;
+		for (int y = 141; y < 150; y++)
+			position[t][95][y] = p;
+		
+		for (int y = 250; y < 259; y++)
+			position[t][95][y] = -p;
 		
 	}
 
