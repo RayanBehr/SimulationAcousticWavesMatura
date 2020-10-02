@@ -140,7 +140,7 @@ public class ControlWindow extends JFrame {
 		textFieldFrequency = new JTextField();
 		textFieldFrequency.setBackground(Color.GRAY);
 		textFieldFrequency.setToolTipText("Frequency [Hz]");
-		textFieldFrequency.setText("3000");
+		textFieldFrequency.setText("900");
 		textFieldFrequency.setHorizontalAlignment(SwingConstants.TRAILING);
 		textFieldFrequency.setColumns(10);
 		textFieldFrequency.setBounds(261, 241, 89, 20);
@@ -156,7 +156,7 @@ public class ControlWindow extends JFrame {
 		textFieldSolidPath.setBackground(Color.GRAY);
 		textFieldSolidPath.setToolTipText("Path to [*.jpg or *.png]");
 		//Change this path if the repository was cloned to another user
-		textFieldSolidPath.setText("C:\\Users\\rayan\\git\\SimulationAcousticWavesMatura\\AcousticWaves\\src\\maps\\0.jpg");
+		textFieldSolidPath.setText("C:\\Users\\rayan\\git\\SimulationAcousticWavesMatura\\AcousticWaves\\src\\maps\\3.jpg");
 		//"C:\\StaticData\\Geometry\\Wellenleitung.jpg"
 		//"C:\\StaticData\\Geometry\\SpeakerCabinet_x400_300mm.jpg"
 		textFieldSolidPath.setBounds(10, 36, 239, 20);
