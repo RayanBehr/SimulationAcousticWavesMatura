@@ -106,7 +106,7 @@ public class ControlWindow extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(ControlWindow.class.getResource("/icons/icon.png")));
 		setTitle("Wave Dynamics Simulation (ControlWindow)");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 372, 561);
+		setBounds(1200, 100, 372, 561);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -140,7 +140,7 @@ public class ControlWindow extends JFrame {
 		textFieldFrequency = new JTextField();
 		textFieldFrequency.setBackground(Color.GRAY);
 		textFieldFrequency.setToolTipText("Frequency [Hz]");
-		textFieldFrequency.setText("10");
+		textFieldFrequency.setText("3000");
 		textFieldFrequency.setHorizontalAlignment(SwingConstants.TRAILING);
 		textFieldFrequency.setColumns(10);
 		textFieldFrequency.setBounds(261, 241, 89, 20);

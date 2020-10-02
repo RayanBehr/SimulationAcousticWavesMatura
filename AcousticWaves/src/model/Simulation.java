@@ -170,6 +170,7 @@ public class Simulation extends Thread {
 			for (int x = 0; x < matrix_size; x++) {
 				iterateVelocity(t, x, y);
 				iteratePosition(t, x, y);
+				setBoundaries(t, x, y);
 			}
 		});
 	}
@@ -179,14 +180,64 @@ public class Simulation extends Thread {
 			for (int x = 0; x < matrix_size; x++) {
 				iterateVelocity(t, x, y);
 				iteratePosition(t, x, y);
+				setBoundaries(t, x, y);
 			}
 		}
 	}
-
 	private void iteratePosition(int t, int x, int y) {	
 
 		position[t + 1][x][y] = position[t][x][y] - 0.5 * velocity[t + 1][x][y] * damping;
 
+	}
+	
+	private void setBoundaries(int t, int x, int y) {
+		if (x == 0 || x == matrix_size - 1 || y == 0 || y == matrix_size - 1) {
+			if (solid[x][y]) {
+				velocity[t + 1][x][y] = 0;
+			}
+
+			else {
+				double acceleration = 0;
+				
+				double c = 0;
+
+				double pM = position[t][x][y];
+				double pL = 0;
+				double pR = 0;
+				double pB = 0;
+				double pT = 0;
+
+				// Left
+				if (boundaryCheck(x - 1, y)) {
+					pL = position[t][x - 1][y];
+					c++;
+				}
+
+				// Right
+				if (boundaryCheck(x + 1, y)) {
+					pR = position[t][x + 1][y];
+					c++;
+				}
+
+				// Below
+				if (boundaryCheck(x, y + 1)) {
+					pB = position[t][x][y + 1];
+					c++;
+				}
+
+				// Top
+				if (boundaryCheck(x, y - 1)) {
+					pT = position[t][x][y - 1];
+					c++;
+				}
+
+				acceleration = (c * pM - pL - pR - pB - pT) / c;
+				
+				velocity[t + 1][x][y] = velocity[t + 1][x][y] - acceleration;
+			}
+			
+			position[t + 1][x][y] = position[t + 1][x][y] + 0.5 * velocity[t + 1][x][y] * damping;
+		}
 	}
 
 	private void iterateVelocity(int t, int x, int y) {
