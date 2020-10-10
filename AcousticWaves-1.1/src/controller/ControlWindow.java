@@ -155,7 +155,7 @@ public class ControlWindow extends JFrame {
 		textFieldSolidPath.setBackground(Color.GRAY);
 		textFieldSolidPath.setToolTipText("Path to [*.jpg or *.png]");
 		//Change this path if the repository was cloned to another user
-		textFieldSolidPath.setText("C:\\Users\\rayan\\git\\SimulationAcousticWavesMatura\\AcousticWaves\\src\\maps\\3.jpg");
+		textFieldSolidPath.setText("C:\\Users\\Rayan Behr\\git\\SimulationAcousticWavesMatura\\AcousticWaves-1.1\\src\\maps\\3.jpg");
 		textFieldSolidPath.setBounds(10, 36, 239, 20);
 		contentPane.add(textFieldSolidPath);
 		textFieldSolidPath.setColumns(10);

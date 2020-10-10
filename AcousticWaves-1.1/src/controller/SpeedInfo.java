@@ -12,7 +12,7 @@ public class SpeedInfo extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private double[] values = new double[1000];
+	private double[] values = new double[100];
 	
 	private int last_time_index = 0;
 	
