@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import model.Simulation;
-import view.Chart;
 import view.ViewWindow;
 
 import javax.swing.JLabel;
@@ -187,6 +186,7 @@ public class ControlWindow extends JFrame {
 				simulation.setTimeInterval(stringToDouble(textFieldTimeInterval.getText()) / Math.pow(10, 9)); // [ns]
 																												// to
 																												// [s]
+
 				simulation.setActuationFrequency(stringToDouble(textFieldFrequency.getText()));
 				simulation.startStopOrRestartEmulation();
 			}
@@ -417,7 +417,7 @@ public class ControlWindow extends JFrame {
 				}
 				
 				speed.addValue(simulation.getIterationIndex());
-
+				
 			}
 		}).start();
 	}

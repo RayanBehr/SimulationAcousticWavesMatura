@@ -27,7 +27,7 @@ public class SpeedInfo extends JPanel {
 		
 		speed += amount_of_steps / 10d;
 		
-		speed *= 1/1.1d;
+		speed *= 0.9d;
 		
 		for(int i = 1; i < values.length; i++) 
 		{

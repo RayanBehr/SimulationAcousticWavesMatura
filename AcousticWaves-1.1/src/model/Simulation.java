@@ -314,14 +314,20 @@ public class Simulation extends Thread {
 		
 		for (int y = 250; y < 259; y++)
 			position[t][95][y] = -p;
-			*/
 		
+		for (int y = 141; y < 150; y++)
+			position[t][94][y] = -p;
+		
+		for (int y = 250; y < 259; y++)
+			position[t][94][y] = p;
+		*/
 		//3
+		///*
 		for (int x = 116; x < 191; x++)
 			position[t][x][240] = p;
 		for (int x = 116; x < 191; x++)
 			position[t][x][241] = -p;
-		
+		//*/
 		
 	}
 
