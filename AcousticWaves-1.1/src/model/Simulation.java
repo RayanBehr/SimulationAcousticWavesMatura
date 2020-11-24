@@ -249,7 +249,7 @@ public class Simulation extends Thread {
 			}
 	
 			else {
-				double acceleration = 0;
+				double velocityChange = 0;
 				
 				double c = 0;
 	
@@ -283,9 +283,9 @@ public class Simulation extends Thread {
 					c++;
 				}
 	
-				acceleration = (c * pM - pL - pR - pB - pT) / c;
+				velocityChange = (c * pM - pL - pR - pB - pT) / c;
 				
-				velocity[t + 1][x][y] = velocity[t][x][y] + acceleration;
+				velocity[t + 1][x][y] = velocity[t][x][y] + velocityChange;
 			}
 
 	}
@@ -373,19 +373,19 @@ public class Simulation extends Thread {
 		for (int x = 0; x < matrix_size; x++) {
 			for (int y = 0; y < matrix_size; y++) {
 
-				int colorLevel = 0;
+				double colorLevel = 0;
 				if (view) {
 					
-					colorLevel = (int) (sigmoid(a, (velocity[timeIndex][x][y])) * 255);
+					colorLevel = sigmoid(a, (velocity[timeIndex][x][y]));
 					
 				} else {
 					
-					colorLevel = (int) (sigmoid(a, (position[timeIndex][x][y])) * 255);
+					colorLevel = sigmoid(a, (position[timeIndex][x][y]));
 				}
 				
 
 
-				visualData[x][y] = new Color(255 - colorLevel, 0, colorLevel);
+				visualData[x][y] = new Color((int) ((1 - colorLevel)*255), 0, (int) (colorLevel*255));
 
 				if (solid[x][y])
 					visualData[x][y] = new Color(200, 200, 0);
