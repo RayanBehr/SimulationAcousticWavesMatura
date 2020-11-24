@@ -369,20 +369,26 @@ public class Simulation extends Thread {
 	public Color[][] getView(int timeIndex, double a, boolean view) {
 		Color[][] visualData = new Color[matrix_size][matrix_size];
 
-		for (int Tx = 0; Tx < matrix_size; Tx++) {
-			for (int Ty = 0; Ty < matrix_size; Ty++) {
+	
+		for (int x = 0; x < matrix_size; x++) {
+			for (int y = 0; y < matrix_size; y++) {
 
 				int colorLevel = 0;
 				if (view) {
-					colorLevel = (int) (sigmoid(a, (velocity[timeIndex][Tx][Ty])) * 255);
+					
+					colorLevel = (int) (sigmoid(a, (velocity[timeIndex][x][y])) * 255);
+					
 				} else {
-					colorLevel = (int) (sigmoid(a, (position[timeIndex][Tx][Ty])) * 255);
+					
+					colorLevel = (int) (sigmoid(a, (position[timeIndex][x][y])) * 255);
 				}
+				
 
-				visualData[Tx][Ty] = new Color(255 - colorLevel, 0, colorLevel);
 
-				if (solid[Tx][Ty])
-					visualData[Tx][Ty] = new Color(200, 200, 0);
+				visualData[x][y] = new Color(255 - colorLevel, 0, colorLevel);
+
+				if (solid[x][y])
+					visualData[x][y] = new Color(200, 200, 0);
 			}
 		}
 
@@ -390,12 +396,13 @@ public class Simulation extends Thread {
 	}
 
 	/*
-	 * @param a Base
+	 * @param a base
 	 * 
 	 * @param b -exponent
 	 */
-	private double sigmoid(double a, double b) {
-		return 1 / (1 + (Math.pow(a, -b)));
+	private double sigmoid(double a, double x) 
+	{
+		return 1 / (1 + (Math.pow(a, -x)));
 	}
 
 }
