@@ -277,7 +277,7 @@ public class Simulation extends Thread {
 					c++;
 				}
 	
-				// Top
+				// Above
 				if (boundaryCheck(x, y - 1)) {
 					pT = position[t][x][y - 1];
 					c++;
@@ -290,8 +290,9 @@ public class Simulation extends Thread {
 
 	}
 
-	// Checks if the address combination is in the bounds
-	public boolean boundaryCheck(int x, int y) {
+	// Checks if the address combination is within the bounds
+	public boolean boundaryCheck(int x, int y) 
+	{
 		if (x >= 0 && y >= 0) {
 			if (x < matrix_size && y < matrix_size) {
 				return true;
