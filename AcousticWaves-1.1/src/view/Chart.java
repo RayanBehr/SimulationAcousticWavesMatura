@@ -14,6 +14,8 @@ public class Chart extends JPanel {
 
 	private double[] pressureValues;
 	private double[] changeValues;
+	
+	private int time_steps;
 
 	private int currentIteration = 0;
 	private int shownTimeIndex = 0;
@@ -21,6 +23,7 @@ public class Chart extends JPanel {
 	private String id;
 
 	public Chart(int time_steps) {
+		this.time_steps = time_steps;
 		pressureValues = new double[time_steps];
 		changeValues = new double[time_steps];
 	}
@@ -88,6 +91,7 @@ public class Chart extends JPanel {
 		g.drawString(String.valueOf(maximum_change), 200, super.getHeight() - 3);
 		repaint();
 	}
+
 
 	public double getAbsMaximumPressure() {
 		double maximum = 0;

@@ -251,7 +251,7 @@ public class Simulation extends Thread {
 			else {
 				double velocityChange = 0;
 				
-				double c = 0;
+				int c = 0;
 	
 				double pM = position[t][x][y];
 				double pL = 0;
